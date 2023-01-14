@@ -72,7 +72,7 @@ section .section-sub_title {
 	font-weight: 600;
 	text-transform: uppercase;
 	letter-spacing: 2px;
-	color: rgb(155, 155, 155);
+	color: rgb(114 110 110);
 }
 
 /* Utils Ends Here */
@@ -294,7 +294,7 @@ header .row {
 
 .education-list_date {
 	font-size: 12px;
-	color: rgb(155, 155, 155);
+	color: rgb(114 110 110);
 }
 
 .education-list_info {
@@ -310,7 +310,7 @@ header .row {
 	cursor: pointer;
 	font-family: var(--font-heading);
 	font-size: 1rem;
-	color: rgb(155, 155, 155);
+	color: rgb(114 110 110);
 	margin-right: 3.12rem;
 }
 
@@ -345,6 +345,8 @@ header .row {
 
 .projects_item__img img {
 	width: 100%;
+	max-width: 450px;
+	height: auto;
 	object-fit: contain;
 	padding: 1rem;
 	opacity: 0.8;
