@@ -19,9 +19,9 @@
 			<div class="navbar-container">
 				<div class="row">
 					<nav class="navbar" id="navBar">
-						<div class="container">
-							<ul class="nav-menu d-block d-flex">
-								<li class="menu-item">
+						<div class="container d-flex">
+							<ul class="nav-menu d-flex" id="navMenu">
+								<li class="menu-item active">
 									<a href="#hi" class="nav-link">Hello</a>
 								</li>
 								<li class="menu-item">
@@ -42,6 +42,10 @@
 									<a href="https://t4technow.tk" class="nav-link">Contact</a>
 								</li>
 							</ul>
+
+							<div class="toggle-button" onclick="toggleMenu();">
+								<span class="menu-toggler" id="menu-toggler"></span>
+							</div>
 						</div>
 					</nav>
 				</div>
@@ -97,7 +101,7 @@
 		</header>
 
 		<div class="container">
-			<section class="mt-7 mb-5" id="hi">
+			<section class="page-section mt-7 mb-5" id="hi">
 				<h1 class="section-title mb-3">Hi_</h1>
 				<p class="section-info">
 					I am Junior Web developer able to build a Web presence from the ground
@@ -123,7 +127,7 @@
 				</a>
 			</section>
 
-			<section class="mt-7 mb-5" id="resume">
+			<section class="page-section mt-7 mb-5" id="resume">
 				<h1 class="section-title mb-3">Resume_</h1>
 				<p class="section-info">
 					I am Junior Web developer able to build a Web presence from the ground
@@ -159,7 +163,7 @@
 				</div>
 			</section>
 
-			<section class="mt-7 mb-5" id="projects">
+			<section class="page-section mt-7 mb-5" id="projects">
 				<h1 class="section-title mb-3">My Projects_</h1>
 				<div class="projects_showcase">
 					<ul class="filter-nav col-md-8 d-flex mb-1" id="filter-nav">
@@ -289,7 +293,192 @@
 					</div>
 				</div>
 			</section>
+
+			<!-- Skills -->
+			<section id="skills">
+				<h1 class="section-title mb-3">Languages_</h1>
+				<ul class="auto-grid mb-3 mt-3">
+					<li class="grid-item shadow">
+						<img src="./assets/img/skills/html.png" alt="html" />
+					</li>
+					<li class="grid-item shadow">
+						<img src="./assets/img/skills/css.png" alt="css" />
+					</li>
+					<li class="grid-item shadow">
+						<img src="./assets/img/skills/js.png" alt="javascript" />
+					</li>
+					<li class="grid-item shadow">
+						<img src="./assets/img/skills/django.png" alt="django" />
+					</li>
+					<li class="grid-item shadow">
+						<img src="./assets/img/skills/c.png" alt="react" />
+					</li>
+					<li class="grid-item shadow">
+						<img src="./assets/img/skills/java.png" alt="node" />
+					</li>
+					<li class="grid-item shadow">
+						<img src="./assets/img/skills/c.png" alt="c" />
+					</li>
+					<li class="grid-item shadow">
+						<img src="./assets/img/skills/java.png" alt="java" />
+					</li>
+				</ul>
+			</section>
 		</div>
+
+		<!-- ======= Services Section ======= -->
+		<section id="services" class="services mb-3 mt-5">
+			<div class="container">
+				<div class="section-title">
+					<h1 class="section-title mb-3">Services_</h1>
+					<h2 class="section-sub_title mt-2 mb-2">
+						I can provide a variety of services, including:
+					</h2>
+				</div>
+
+				<div class="row">
+					<div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up">
+						<div class="icon"><i class="bi bi-briefcase"></i></div>
+						<h4 class="title"><a href="">Website design and development</a></h4>
+						<p class="description">
+							Creating the overall look and layout of a website, as well as
+							coding and programming functionality.
+						</p>
+					</div>
+					<div
+						class="col-lg-4 col-md-6 icon-box"
+						data-aos="fade-up"
+						data-aos-delay="100"
+					>
+						<div class="icon"><i class="bi bi-card-checklist"></i></div>
+						<h4 class="title"><a href="">E-commerce development</a></h4>
+						<p class="description">
+							Building and implementing online stores and shopping carts.
+						</p>
+					</div>
+					<div
+						class="col-lg-4 col-md-6 icon-box"
+						data-aos="fade-up"
+						data-aos-delay="200"
+					>
+						<div class="icon"><i class="bi bi-bar-chart"></i></div>
+						<h4 class="title">
+							<a href="">Website testing and quality assurance</a>
+						</h4>
+						<p class="description">
+							Testing websites for bugs and usability issues, and ensuring they
+							meet industry standards.
+						</p>
+					</div>
+					<div
+						class="col-lg-4 col-md-6 icon-box"
+						data-aos="fade-up"
+						data-aos-delay="300"
+					>
+						<div class="icon"><i class="bi bi-binoculars"></i></div>
+						<h4 class="title">
+							<a href="">Search engine optimization (SEO)</a>
+						</h4>
+						<p class="description">
+							Optimizing website content and structure to improve search engine
+							rankings.
+						</p>
+					</div>
+					<div
+						class="col-lg-4 col-md-6 icon-box"
+						data-aos="fade-up"
+						data-aos-delay="400"
+					>
+						<div class="icon"><i class="bi bi-brightness-high"></i></div>
+						<h4 class="title"><a href="">Web application development</a></h4>
+						<p class="description">
+							Building custom web-based applications for specific business
+							needs.
+						</p>
+					</div>
+					<div
+						class="col-lg-4 col-md-6 icon-box"
+						data-aos="fade-up"
+						data-aos-delay="500"
+					>
+						<div class="icon"><i class="bi bi-calendar4-week"></i></div>
+						<h4 class="title"><a href="">Responsive design</a></h4>
+						<p class="description">
+							Designing and coding websites that are optimized for different
+							screen sizes and devices.
+						</p>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- End Services Section -->
+
+		<footer>
+			<div class="container">
+				<h1 class="section-title mb-3 pt-5">Get in touch_</h1>
+				<div class="section-wrapper d-flex">
+					<div class="col-sm-12 col-5">
+						<div class="personal-profile__contacts">
+							<dl class="contact-list contact-list__opacity-titles">
+								<dt>Age:</dt>
+								<dd>23</dd>
+								<dt>Phone:</dt>
+								<dd><a href="tel:917034696235">91 703469 6235</a></dd>
+								<dt>Email:</dt>
+								<dd>
+									<a href="mailto:mohammedmurshid101@icloud.com"
+										>mohammedmurshid101@icloud.com</a
+									>
+								</dd>
+								<dt>Address:</dt>
+								<dd>Tirur, Malappuram Kerala India</dd>
+							</dl>
+						</div>
+					</div>
+					<div class="col-1"></div>
+					<div class="col-sm-12 col-6">
+						<h5 class="text-white mb-1">Or just write me a letter here_</h5>
+						<form name="userMsg" class="msg-form" id="submit-form">
+							<input
+								type="text"
+								name="userName"
+								id="userName"
+								placeholder="Your name"
+								class="col-12 mb-1"
+							/>
+							<input
+								type="text"
+								name="userEmail"
+								id="userEmail"
+								placeholder="Your email"
+								class="col-12 mb-1"
+							/>
+							<textarea
+								name="message"
+								id="message"
+								placeholder="Your message"
+								rows="3"
+								class="col-12 mb-1"
+							></textarea>
+
+							<div class="error-message mt-1"></div>
+
+							<input
+								type="submit"
+								class="submit text-center shadow col-12"
+								value="SEND"
+							/>
+						</form>
+					</div>
+				</div>
+
+				<div class="text-center copy-right mt-5">
+					<p>&copy; 2023 Mohammed Murshid. All rights reserved</p>
+				</div>
+			</div>
+		</footer>
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 		<script src="./assets/js/app.js"></script>
 	</body>
 </html>

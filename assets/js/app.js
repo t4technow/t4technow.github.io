@@ -1,3 +1,5 @@
+// Sticky nav background change
+
 window.onscroll = () => {
 	scrollNavbar();
 };
@@ -26,6 +28,63 @@ scrollNavbar = () => {
 	}
 };
 
+// // Add active class for nav
+// document.querySelector(document).ready(function () {
+// 	document.querySelector("a[href*=#]").bind("click", function (e) {
+// 		e.preventDefault(); // prevent hard jump, the default behavior
+
+// 		var target = document.querySelector(this).attr("href"); // Set the target as variable
+
+// 		// perform animated scrolling by getting top-position of target-element and set it as scroll target
+// 		document
+// 			.querySelector("html, body")
+// 			.stop()
+// 			.animate(
+// 				{
+// 					scrollTop: document.querySelector(target).offset().top,
+// 				},
+// 				600,
+// 				function () {
+// 					location.hash = target; //attach the hash (#jumptarget) to the pageurl
+// 				}
+// 			);
+
+// 		return false;
+// 	});
+// });
+
+// document
+// 	.querySelector(window)
+// 	.scroll(function () {
+// 		var scrollDistance = document.querySelector(window).scrollTop;
+
+// 		// Show/hide menu on scroll
+// 		//if (scrollDistance >= 850) {
+// 		//		document.querySelector('nav').fadeIn("fast");
+// 		//} else {
+// 		//		document.querySelector('nav').fadeOut("fast");
+// 		//}
+
+// 		// Assign active class to nav links while scolling
+// 		document.querySelector(".page-section").each(function (i) {
+// 			if (document.querySelector(this).position().top <= scrollDistance) {
+// 				document.querySelector(".nav-menu a.active").classList.remove("active");
+// 				document.querySelector(".nav-menu a").eq(i).classList.add("active");
+// 			}
+// 		});
+// 	})
+// 	.scroll();
+
+// Mobile Menu
+function toggleMenu() {
+	let hamMenu = document.querySelector("#navBar");
+	let navMenu = document.querySelector("#navMenu");
+
+	hamMenu.classList.toggle("menu-open");
+	navMenu.classList.toggle("open");
+}
+
+//  Filter for project items
 filterSelection("all");
 function filterSelection(c) {
 	var x, i;
@@ -70,3 +129,53 @@ for (var i = 0; i < btns.length; i++) {
 		this.className += " active";
 	});
 }
+
+function validateForm() {
+	let name = document.forms.userMsg.userName.value;
+	let email = document.forms.userMsg.userEmail.value;
+	let msg = document.forms.userMsg.message.value;
+	let displayError = document.querySelector(".error-message");
+
+	var regEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/g; //Javascript reGex for Email Validation.
+	var regName = /\d+$/g; // Javascript reGex for Name validation									 // Javascript reGex for Phone Number validation.
+
+	if (name == "" || regName.test(name)) {
+		displayError.innerHTML = "Please enter a valid name";
+		name.focus();
+		return false;
+	}
+
+	if (email == "" || !regEmail.test(email)) {
+		displayError.innerHTML = "Please enter a valid e-mail address.";
+		email.focus();
+		return false;
+	}
+
+	if (msg == "") {
+		displayError.innerHTML = "Please enter a message.";
+		msg.focus();
+		return false;
+	}
+
+	return true;
+}
+
+$("#submit-form").submit((e) => {
+	e.preventDefault();
+	validateForm();
+	if (validateForm) {
+		$.ajax({
+			url: "https://script.google.com/macros/s/AKfycbynhyjuUzdqxTIAdT7V0rcGHnAm-N6pDiJURBaZ660VwxQB9r7KKCqpDPr487mSeDffGA/exec",
+			data: $("#submit-form").serialize(),
+			method: "post",
+			success: function (response) {
+				alert("Form submitted successfully");
+				window.location.reload();
+				//window.location.href="https://google.com"
+			},
+			error: function (err) {
+				alert("Something Error");
+			},
+		});
+	}
+});
